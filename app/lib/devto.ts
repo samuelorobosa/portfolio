@@ -14,6 +14,24 @@ export interface Article {
   user: { username: string };
 }
 
+// The list endpoint (/articles/me) returns tag_list as string[].
+// The individual endpoint (/articles/{username}/{slug}) returns it as a
+// comma-separated string. This normalises both to string[].
+function normaliseTags(raw: string | string[] | undefined): string[] {
+  if (!raw) return [];
+  if (Array.isArray(raw)) return raw;
+  return raw.split(",").map((t) => t.trim()).filter(Boolean);
+}
+
+function normalise(article: Record<string, unknown>): Article {
+  return {
+    ...article,
+    tag_list: normaliseTags(
+      article.tag_list as string | string[] | undefined
+    ),
+  } as Article;
+}
+
 export async function getArticles(): Promise<Article[]> {
   const key = process.env.DEV_TO_API_KEY;
   if (!key) return [];
@@ -23,7 +41,8 @@ export async function getArticles(): Promise<Article[]> {
       next: { revalidate: 3600 },
     });
     if (!res.ok) return [];
-    return res.json();
+    const data: Record<string, unknown>[] = await res.json();
+    return data.map(normalise);
   } catch {
     return [];
   }
@@ -38,7 +57,8 @@ export async function getArticle(slug: string): Promise<Article | null> {
       { next: { revalidate: 3600 } }
     );
     if (!res.ok) return null;
-    return res.json();
+    const data: Record<string, unknown> = await res.json();
+    return normalise(data);
   } catch {
     return null;
   }
