@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ExternalLink } from "lucide-react";
 import { motion } from "motion/react";
 import SectionLabel from "./SectionLabel";
 
@@ -126,7 +127,7 @@ export default function WorkList({ limit, title = "Selected work" }: WorkListPro
               </span>
               <span className="text-[12px] font-normal text-muted text-right flex items-center justify-end gap-[5px]">
                 {item.url}
-                <span className="text-green text-[11px]">↗</span>
+                <ExternalLink className="text-green shrink-0" size={11} aria-hidden />
               </span>
             </div>
 
@@ -140,7 +141,7 @@ export default function WorkList({ limit, title = "Selected work" }: WorkListPro
               </span>
               <span className="text-[12px] text-muted flex items-center gap-1">
                 {item.url}
-                <span className="text-green text-[11px]">↗</span>
+                <ExternalLink className="text-green shrink-0" size={11} aria-hidden />
               </span>
             </div>
           </motion.a>
