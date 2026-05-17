@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getArticle, getArticles } from "../../lib/devto";
+import { ArrowBack, LinkExternal, MetaSeparator } from "../../components/icons";
 
 export async function generateStaticParams() {
   const articles = await getArticles();
@@ -50,7 +51,8 @@ export default async function ArticlePage({
         href="/articles"
         className="inline-flex items-center gap-2 text-[12px] font-medium text-muted no-underline hover:text-ink transition-colors duration-150 mb-12 block"
       >
-        ← Back to articles
+        <ArrowBack size={13} />
+        Back to articles
       </Link>
 
       <div className="max-w-[720px]">
@@ -59,13 +61,13 @@ export default async function ArticlePage({
           <span>{date}</span>
           {article.reading_time_minutes > 0 && (
             <>
-              <span className="text-faint">·</span>
+              <MetaSeparator />
               <span>{article.reading_time_minutes} min read</span>
             </>
           )}
           {article.public_reactions_count > 0 && (
             <>
-              <span className="text-faint">·</span>
+              <MetaSeparator />
               <span>{article.public_reactions_count} reactions</span>
             </>
           )}
@@ -109,9 +111,10 @@ export default async function ArticlePage({
         <div className="mt-16 pt-8 border-t border-faint flex items-center justify-between flex-wrap gap-4">
           <Link
             href="/articles"
-            className="text-[12px] font-medium text-muted no-underline hover:text-ink transition-colors duration-150"
+            className="inline-flex items-center gap-2 text-[12px] font-medium text-muted no-underline hover:text-ink transition-colors duration-150"
           >
-            ← Back to articles
+            <ArrowBack size={13} />
+            Back to articles
           </Link>
           <a
             href={article.url}
@@ -120,7 +123,7 @@ export default async function ArticlePage({
             className="text-[12px] font-medium text-muted no-underline hover:text-green transition-colors duration-150 flex items-center gap-1"
           >
             View on dev.to
-            <span className="text-green">↗</span>
+            <LinkExternal size={12} />
           </a>
         </div>
       </div>

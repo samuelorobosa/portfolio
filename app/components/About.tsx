@@ -5,7 +5,7 @@ import SectionLabel from "./SectionLabel";
 
 const META = [
   { key: "Based", value: "Lagos, Nigeria", highlight: false },
-  { key: "Focus", value: "Full-stack · Backend · Web3", highlight: false },
+  { key: "Focus", value: "Product Engineering · System Design", highlight: false },
   { key: "Status", value: "Open to roles & freelance", highlight: true },
 ] as const;
 

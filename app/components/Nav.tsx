@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
+import { SectionBullet } from "./icons";
 
 const NAV_LINKS = [
   { label: "projects", href: "/projects" },
@@ -42,10 +43,9 @@ export default function Nav() {
               border: "1px solid rgba(130,199,154,0.2)",
             }}
           >
-            <span
-              className="w-[6px] h-[6px] rounded-full bg-green shrink-0"
-              style={{ animation: "blink 2.2s infinite" }}
-            />
+            <span style={{ animation: "blink 2.2s infinite" }}>
+              <SectionBullet />
+            </span>
             <span className="hidden sm:inline">available for work</span>
           </motion.div>
 

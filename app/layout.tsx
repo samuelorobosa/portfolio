@@ -14,26 +14,26 @@ const jakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://orobosa.xyz"),
   title: {
-    default: "Samuel Amagbakhen | Full-Stack Developer",
+    default: "Samuel Amagbakhen | Software Engineer",
     template: "%s | Samuel Amagbakhen",
   },
   description:
-    "Full-stack developer from Lagos building well-designed interfaces, dependable backend systems, and scalable applications.",
+    "Software engineer from Lagos building well-designed interfaces, dependable backend systems, and scalable applications.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://orobosa.xyz",
     siteName: "Samuel Amagbakhen",
-    title: "Samuel Amagbakhen | Full-Stack Developer",
+    title: "Samuel Amagbakhen | Software Engineer",
     description:
-      "Full-stack developer from Lagos building well-designed interfaces, dependable backend systems, and scalable applications.",
+      "Software engineer from Lagos building well-designed interfaces, dependable backend systems, and scalable applications.",
   },
   twitter: {
     card: "summary",
     creator: "@Samuel_Orobosa",
-    title: "Samuel Amagbakhen | Full-Stack Developer",
+    title: "Samuel Amagbakhen | Software Engineer",
     description:
-      "Full-stack developer from Lagos building well-designed interfaces, dependable backend systems, and scalable applications.",
+      "Software engineer from Lagos building well-designed interfaces, dependable backend systems, and scalable applications.",
   },
 };
 

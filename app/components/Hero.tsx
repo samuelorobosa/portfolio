@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "motion/react";
+import { ArrowForward } from "./icons";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -39,7 +40,7 @@ export default function Hero() {
           custom={0.06}
           variants={fadeUp}
         >
-          Full-stack
+          Software
         </motion.span>
         <motion.span
           className="block font-[200] text-muted"
@@ -48,7 +49,7 @@ export default function Hero() {
           custom={0.14}
           variants={fadeUp}
         >
-          developer
+          engineer
         </motion.span>
         <motion.span
           className="block"
@@ -84,7 +85,8 @@ export default function Hero() {
           href="/projects"
           className="inline-flex items-center gap-2 bg-ink text-bg text-[12px] font-bold px-[22px] py-3 no-underline transition-opacity hover:opacity-80"
         >
-          View Projects →
+          View Projects
+          <ArrowForward className="text-bg shrink-0" size={14} />
         </Link>
         <Link
           href="/contact"

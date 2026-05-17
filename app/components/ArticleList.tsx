@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import type { Article } from "../lib/devto";
+import { LinkExternal, MetaSeparator } from "./icons";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -74,15 +75,19 @@ export default function ArticleList({ articles }: Props) {
                   )}
                 </div>
 
-                <span className="text-green text-[11px] pt-1">↗</span>
+                <LinkExternal className="text-green shrink-0 pt-1" />
               </div>
 
               {/* Mobile */}
               <div className="sm:hidden flex flex-col gap-2">
-                <span className="text-[11px] text-muted">
+                <span className="text-[11px] text-muted flex items-center gap-1.5 flex-wrap">
                   {formatDate(article.published_at)}
-                  {article.reading_time_minutes > 0 &&
-                    ` · ${article.reading_time_minutes} min read`}
+                  {article.reading_time_minutes > 0 && (
+                    <>
+                      <MetaSeparator />
+                      <span>{article.reading_time_minutes} min read</span>
+                    </>
+                  )}
                 </span>
                 <h2 className="text-[22px] font-extrabold tracking-[-0.03em] text-ink leading-none transition-colors duration-150 group-hover:text-green">
                   {article.title}

@@ -1,7 +1,6 @@
 const SOCIAL_LINKS = [
   { label: "github", href: "https://github.com/samuelorobosa" },
   { label: "linkedin", href: "https://www.linkedin.com/in/samuel-amagbakhen" },
-  { label: "twitter", href: "https://twitter.com/Samuel_Orobosa" },
 ] as const;
 
 export default function Footer() {

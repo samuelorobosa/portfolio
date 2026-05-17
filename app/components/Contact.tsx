@@ -2,13 +2,13 @@
 
 import { motion } from "motion/react";
 import SectionLabel from "./SectionLabel";
+import { LinkExternal } from "./icons";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
 const SOCIAL_LINKS = [
   { label: "GitHub", href: "https://github.com/samuelorobosa" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/samuel-amagbakhen" },
-  { label: "Twitter", href: "https://twitter.com/Samuel_Orobosa" },
 ] as const;
 
 export default function Contact() {
@@ -46,7 +46,7 @@ export default function Contact() {
           className="inline-flex items-center gap-[10px] text-[14px] font-semibold text-ink no-underline border-b border-faint pb-1 w-fit transition-colors duration-150 hover:text-green hover:border-green"
         >
           amagbakhensamuel@gmail.com
-          <span className="text-green">↗</span>
+          <LinkExternal size={12} />
         </a>
 
         <div className="flex gap-6">
