@@ -75,7 +75,7 @@ export default function ArticleList({ articles }: Props) {
                   )}
                 </div>
 
-                <LinkExternal className="text-green shrink-0 pt-1" />
+                <LinkExternal className="text-green shrink-0 pt-1" size={16} />
               </div>
 
               {/* Mobile */}

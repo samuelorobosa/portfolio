@@ -4,10 +4,12 @@ const SOCIAL_LINKS = [
 ] as const;
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 px-4 sm:px-8 md:px-[52px] py-6">
       <span className="text-[11px] font-normal text-muted">
-        © 2025 Samuel Orobosa Amagbakhen
+        © {year} Samuel Orobosa Amagbakhen
       </span>
 
       <div className="flex gap-6">

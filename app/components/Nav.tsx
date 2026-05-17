@@ -26,9 +26,10 @@ export default function Nav() {
         >
           <Link
             href="/"
-            className="text-[14px] font-bold tracking-[-0.02em] text-ink no-underline"
+            aria-label="Samuel Amagbakhen — home"
+            className="text-[22px] font-extrabold tracking-[-0.04em] text-ink no-underline leading-none"
           >
-            Samuel Amagbakhen
+            SA
           </Link>
         </motion.div>
 

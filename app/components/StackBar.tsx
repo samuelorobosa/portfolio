@@ -12,7 +12,6 @@ const TAGS = [
   "NestJS",
   "Node.js",
   "Express.js",
-  "Solidity",
 ] as const;
 
 const ease = [0.22, 1, 0.36, 1] as const;

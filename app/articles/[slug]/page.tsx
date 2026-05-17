@@ -123,7 +123,7 @@ export default async function ArticlePage({
             className="text-[12px] font-medium text-muted no-underline hover:text-green transition-colors duration-150 flex items-center gap-1"
           >
             View on dev.to
-            <LinkExternal size={12} />
+            <LinkExternal size={16} />
           </a>
         </div>
       </div>

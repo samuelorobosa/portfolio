@@ -29,8 +29,8 @@ export default function About() {
         <p className="text-[17px] sm:text-[18px] font-light leading-[1.72] tracking-[-0.01em] text-mid mb-8">
           I&apos;m Samuel, a software developer from Lagos with a love for{" "}
           <strong className="font-bold text-ink">clean code</strong> and
-          well-reasoned architecture. I move between Python, Go, TypeScript, and
-          Solidity depending on what the problem demands.{" "}
+          well-reasoned architecture. I move between Python, Go, and TypeScript
+          depending on what the problem demands.{" "}
           <strong className="font-bold text-ink">
             I care about the details other people skip.
           </strong>
