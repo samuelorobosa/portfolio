@@ -17,7 +17,7 @@ Personal portfolio for Samuel Amagbakhen — full-stack developer from Lagos.
 |---|---|
 | `/` | Hero, stack bar, featured work, about |
 | `/projects` | Full project list |
-| `/articles` | Articles fetched from dev.to |
+| `/articles` | Articles, written as Markdown files in `content/articles` |
 | `/articles/[slug]` | Individual article |
 | `/contact` | Contact info and social links |
 
@@ -48,10 +48,11 @@ cp .env.local.example .env.local
 
 | Variable | Description | Where to get it |
 |---|---|---|
-| `DEV_TO_API_KEY` | Authenticates the articles fetch | [dev.to/settings/extensions](https://dev.to/settings/extensions) |
-| `DEV_TO_USERNAME` | Your dev.to handle (used for article slugs) | Your dev.to profile URL |
+| `SPOTIFY_CLIENT_ID` | Spotify app client ID | [developer.spotify.com/dashboard](https://developer.spotify.com/dashboard) |
+| `SPOTIFY_CLIENT_SECRET` | Spotify app client secret | Same app, under Settings |
+| `SPOTIFY_REFRESH_TOKEN` | Lets the site read your listening data | Visit `http://127.0.0.1:3000/api/spotify/login` once in dev |
 
-The articles page falls back to a "coming soon" message if either variable is missing — the rest of the site works fine without them.
+The music section stays hidden if any of these are missing — the rest of the site works fine without them.
 
 ## Project structure
 
@@ -79,7 +80,7 @@ app/
 │   ├── SectionLabel.tsx
 │   └── ArticleList.tsx
 ├── lib/
-│   └── devto.ts        # getArticles() + getArticle(slug)
+│   └── articles.ts     # getArticles() + getArticle(slug), read from content/articles
 ├── globals.css         # Design tokens, Tailwind theme, prose styles
 └── icon.svg            # Favicon
 ```
@@ -110,7 +111,7 @@ Defined as CSS variables in `globals.css` and mapped to Tailwind utilities via `
 
 ## Deployment
 
-Deploy to [Vercel](https://vercel.com) — it auto-detects Next.js. Add `DEV_TO_API_KEY` and `DEV_TO_USERNAME` in the Vercel project environment variables.
+Deploy to [Vercel](https://vercel.com) — it auto-detects Next.js. Add the three `SPOTIFY_*` variables in the Vercel project environment variables.
 
 ```bash
 pnpm build   # verify the build locally before pushing

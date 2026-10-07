@@ -87,8 +87,8 @@ body {
 /* ── Article prose ── */
 .prose {
   color: var(--mid);
-  font-size: 16px;
-  line-height: 1.82;
+  font-size: 18px;
+  line-height: 1.95;
   max-width: 720px;
 }
 .prose h1,
@@ -111,6 +111,8 @@ body {
 .prose em { font-style: italic; color: var(--muted); }
 .prose ul,
 .prose ol { padding-left: 1.5em; margin-bottom: 1.3em; }
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
 .prose li { margin-bottom: 0.4em; }
 .prose blockquote {
   border-left: 2px solid var(--green);
@@ -143,6 +145,12 @@ body {
   max-width: 100%;
   border: 1px solid var(--faint);
   margin: 1.8em 0;
+}
+.prose iframe.embed {
+  width: 100%;
+  height: 440px;
+  border: 1px solid var(--faint);
+  margin: 1.8em 0 0.6em;
 }
 .prose hr {
   border: none;

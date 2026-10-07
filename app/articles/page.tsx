@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { getArticles } from "../lib/devto";
+import { formatArticleDate, getArticles } from "../lib/articles";
 import ArticleList from "../components/ArticleList";
 import SectionLabel from "../components/SectionLabel";
 
@@ -21,7 +21,18 @@ export default async function ArticlesPage() {
           architecture, and building things on-chain.
         </p>
       ) : (
-        <ArticleList articles={articles} />
+        <ArticleList
+          articles={articles.map(
+            ({ slug, title, date, tags, excerpt, readingMinutes }) => ({
+              slug,
+              title,
+              date: formatArticleDate(date),
+              tags,
+              excerpt,
+              readingMinutes,
+            })
+          )}
+        />
       )}
     </section>
   );
