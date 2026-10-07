@@ -8,6 +8,7 @@ import { SectionBullet } from "./icons";
 const NAV_LINKS = [
   { label: "projects", href: "/projects" },
   { label: "articles", href: "/articles" },
+  { label: "music", href: "/music" },
   { label: "contact", href: "/contact" },
 ] as const;
 
